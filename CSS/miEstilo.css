@@ -1,0 +1,848 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #212529;
+    background-color: #ffffff;
+}
+
+img {
+    max-width: 100%;
+}
+
+.images {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.images .fondo-rally {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.images .menu-flotante-nav {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 25;
+    background: transparent;
+    padding: 0;
+}
+
+.images .menu-flotante {
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.btn-toggler-custom {
+    background-color: rgba(0, 0, 0, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 6px 12px;
+}
+
+.btn-toggler-custom:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 210, 133, 0.5);
+}
+
+.images .nav-item {
+    background: rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    margin: 0 4px;
+    transform: skewX(-20deg);
+}
+
+.images .nav-link {
+    color: #ffffff;
+    background: transparent;
+    font-weight: bold;
+    padding: 8px 16px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.images .nav-link:hover,
+.images .nav-link.active {
+    background: rgba(255, 255, 255, 0.25);
+    color: #00d285 !important;
+}
+
+.rally-logo {
+    position: absolute;
+    top: 3%;
+    left: 3%;
+    z-index: 10;
+}
+
+.marca-titulo {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #2b1f4d;
+    margin: 0;
+    text-shadow:
+        -1px -1px 0 #fff,
+         1px -1px 0 #fff,
+        -1px  1px 0 #fff,
+         1px  1px 0 #fff;
+}
+
+.marca-sub {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #00d285;
+    margin: 0;
+}
+
+.rally-cta {
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    text-align: right;
+    z-index: 10;
+    color: #ffffff;
+}
+
+.cta-texto {
+    font-weight: bold;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.btn-join {
+    display: inline-block;
+    background: #ffffff;
+    color: #000000;
+    font-size: 1.8rem;
+    font-weight: 900;
+    padding: 6px 24px;
+    text-decoration: none;
+    transform: skewX(-15deg);
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-join:hover {
+    background: #00d285;
+    color: #000000;
+    transform: skewX(-15deg) scale(1.05);
+}
+
+.lineas-conexion {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.lineas-conexion line {
+    stroke: #ffffff;
+    stroke-width: 2;
+    stroke-dasharray: 6, 6;
+    opacity: 0.85;
+}
+
+.estacion-item {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+}
+
+.icono-circulo {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 3px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s ease;
+}
+
+.icono-circulo.negro,
+.icono-circulo.blanco {
+    background: rgba(0, 0, 0, 0.85);
+    color: #ffffff;
+}
+
+.icono-circulo:hover {
+    background-color: #00d285;
+    color: #000000;
+    transform: scale(1.15);
+}
+
+.badge-estacion {
+    background: #000000;
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    display: inline-block;
+}
+
+.badge-estacion span {
+    background: #ffffff;
+    color: #000000;
+    padding: 0 4px;
+    margin-left: 2px;
+}
+
+.badge-negro {
+    background: #000000;
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 2px 6px;
+}
+
+.ganador-texto {
+    font-size: 0.65rem;
+    position: absolute;
+    left: 105%;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    text-align: left;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.seccion-reglas {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+}
+
+.seccion-reglas .fondo_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.contenido-reglas {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.titulo-reglas {
+    font-size: 3.2rem;
+    font-weight: 900;
+    font-style: italic;
+    color: #000000;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+.desc-reglas {
+    font-size: 1rem;
+    color: #333333;
+    max-width: 700px;
+    margin: 0 auto 35px auto;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.seccion-reglas .col > div {
+    background-color: rgba(245, 248, 242, 0.95);
+    color: #000000;
+    border-radius: 10px;
+    padding: 20px 12px;
+    margin: 5px 0;
+    min-height: 105px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.seccion-reglas .col > div:hover {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #00d285;
+    transform: translateY(-5px);
+}
+
+.teams {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.teams .fondo3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.team {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 25px;
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.team:hover {
+    transform: translateY(-8px);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.team img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.team:hover img {
+    background-color: #f0f0f0;
+    transform: scale(1.03);
+}
+
+.team p {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 12px;
+    margin: 12px 0 0;
+    border-radius: 8px;
+}
+
+.team h3 {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #00d285;
+    font-weight: 800;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+.titulo-seccion {
+    font-size: 2.3rem;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.subtitulo-seccion {
+    font-size: 1.05rem;
+    color: #64748b;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.btn-rally {
+    background-color: #00d285;
+    color: #000000 !important;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 4px;
+    transform: skewX(-12deg);
+    transition: all 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn-rally:hover {
+    background-color: #ffffff;
+    color: #000000 !important;
+    transform: skewX(-12deg) scale(1.04);
+    box-shadow: 0 4px 15px rgba(0, 210, 133, 0.5);
+}
+
+.btn-rally-sm {
+    background-color: #00d285;
+    color: #000000;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.btn-rally-sm:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.seccion-promociones {
+    background-color: #0d0f12;
+    color: #ffffff;
+}
+
+.seccion-promociones .titulo-seccion {
+    color: #ffffff;
+}
+
+.seccion-promociones .subtitulo-seccion {
+    color: #94a3b8;
+}
+
+.slide-promo-bg {
+    min-height: 440px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.slide-promo-bg .carousel-caption {
+    position: static;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-shadow: 0 3px 8px rgba(0,0,0,0.8);
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #00d285;
+    margin: 0 6px;
+    opacity: 0.5;
+}
+
+.carousel-indicators .active {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.seccion-galeria {
+    background-color: #f8fafc;
+}
+
+.card-galeria {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.card-galeria:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12) !important;
+}
+
+.galeria-img-wrap {
+    height: 185px;
+    overflow: hidden;
+    position: relative;
+    background-color: #0f172a;
+}
+
+.img-galeria {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card-galeria:hover .img-galeria {
+    transform: scale(1.1);
+}
+
+.badge-galeria {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 0.72rem;
+    letter-spacing: 0.5px;
+}
+
+.seccion-catalogo {
+    background-color: #ffffff;
+}
+
+.card-producto {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card-producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1) !important;
+    border-color: #00d285;
+}
+
+.card-badge-wrap {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+}
+
+.producto-icono-box {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8fafc;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.seccion-faq {
+    background-color: #f1f5f9;
+}
+
+.accordion-custom .accordion-item {
+    border: 1px solid #e2e8f0;
+    margin-bottom: 12px;
+    border-radius: 10px !important;
+    overflow: hidden;
+}
+
+.accordion-custom .accordion-button {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #1e293b;
+    padding: 16px 20px;
+}
+
+.accordion-custom .accordion-button:not(.collapsed) {
+    color: #065f46;
+    background-color: #ecfdf5;
+    box-shadow: none;
+    border-bottom: 1px solid #d1fae5;
+}
+
+.accordion-custom .accordion-button:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 210, 133, 0.3);
+    border-color: #00d285;
+}
+
+.accordion-custom .accordion-body {
+    background-color: #ffffff;
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.modal-content-rally {
+    background-color: #111827;
+    border: 1px solid #374151;
+    border-radius: 12px;
+}
+
+.form-control-dark {
+    background-color: #1f2937;
+    color: #ffffff;
+    border: 1px solid #4b5563;
+}
+
+.form-control-dark:focus {
+    background-color: #1f2937;
+    color: #ffffff;
+    border-color: #00d285;
+    box-shadow: 0 0 0 0.2rem rgba(0, 210, 133, 0.35);
+}
+
+.form-control-dark option {
+    background-color: #1f2937;
+    color: #ffffff;
+}
+
+.footer {
+    background-color: #0b0d10;
+    color: #ffffff;
+    padding: 50px 20px 25px;
+}
+
+.footer h3 {
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+
+.footer h5 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.footer p {
+    color: #9ca3af;
+    font-size: 0.95rem;
+}
+
+.footer a {
+    color: #9ca3af;
+    text-decoration: none;
+    margin: 4px 0;
+    font-size: 0.92rem;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer a:hover {
+    color: #00d285;
+    padding-left: 4px;
+}
+
+.footer hr {
+    border-color: #374151;
+}
+
+.footer .copyright {
+    font-size: 0.85rem;
+}
+
+@media (max-width: 991px) {
+    .images .menu-flotante-nav {
+        top: 10px;
+        right: 15px;
+    }
+
+    .images .navbar-collapse {
+        background: rgba(10, 12, 16, 0.96);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 8px;
+        padding: 12px;
+        margin-top: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    }
+
+    .images .menu-flotante {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .images .nav-item {
+        transform: none;
+        margin: 4px 0;
+        width: 100%;
+        text-align: center;
+        border-radius: 4px;
+    }
+
+    .images .nav-link {
+        padding: 8px 12px;
+        font-size: 0.95rem;
+    }
+
+    .marca-titulo {
+        font-size: 1.8rem;
+    }
+
+    .marca-sub {
+        font-size: 1.1rem;
+    }
+
+    .btn-join {
+        font-size: 1.3rem;
+        padding: 6px 16px;
+    }
+
+    .titulo-reglas {
+        font-size: 2.5rem;
+    }
+
+    .slide-promo-bg {
+        min-height: 380px;
+    }
+}
+
+@media (max-width: 768px) {
+    .images .menu-flotante-nav {
+        top: 6px;
+        right: 8px;
+    }
+
+    .rally-logo {
+        top: 8%;
+        left: 4%;
+    }
+
+    .marca-titulo {
+        font-size: 1.4rem;
+    }
+
+    .marca-sub {
+        font-size: 0.9rem;
+    }
+
+    .rally-cta {
+        top: 25%;
+        right: 4%;
+    }
+
+    .cta-texto {
+        font-size: 0.75rem;
+    }
+
+    .btn-join {
+        font-size: 0.95rem;
+        padding: 5px 12px;
+    }
+
+    .icono-circulo {
+        width: 30px;
+        height: 30px;
+        font-size: 0.85rem;
+    }
+
+    .badge-estacion,
+    .badge-negro {
+        font-size: 0.52rem;
+        padding: 1px 4px;
+    }
+
+    .seccion-reglas {
+        min-height: auto;
+        padding: 40px 10px;
+    }
+
+    .contenido-reglas {
+        padding: 20px 10px;
+    }
+
+    .titulo-reglas {
+        font-size: 2rem;
+    }
+
+    .desc-reglas {
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+    }
+
+    .teams {
+        min-height: auto;
+        padding: 40px 15px;
+    }
+
+    .team img {
+        height: 190px;
+    }
+
+    .titulo-seccion {
+        font-size: 1.7rem;
+    }
+
+    .subtitulo-seccion {
+        font-size: 0.9rem;
+    }
+
+    .slide-promo-bg {
+        min-height: 340px;
+    }
+
+    .slide-promo-bg .carousel-caption {
+        padding: 20px 15px;
+    }
+
+    .slide-promo-bg .display-6 {
+        font-size: 1.5rem;
+    }
+
+    .galeria-img-wrap {
+        height: 155px;
+    }
+}
+
+@media (max-width: 480px) {
+    .marca-titulo {
+        font-size: 1.15rem;
+    }
+
+    .marca-sub {
+        font-size: 0.75rem;
+    }
+
+    .rally-cta {
+        top: 28%;
+    }
+
+    .btn-join {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+    }
+
+    .titulo-reglas {
+        font-size: 1.6rem;
+    }
+
+    .titulo-seccion {
+        font-size: 1.4rem;
+    }
+
+    .team img {
+        height: 160px;
+    }
+
+    .slide-promo-bg {
+        min-height: 300px;
+    }
+
+    .btn-rally {
+        font-size: 0.85rem;
+        padding: 8px 14px;
+    }
+}
